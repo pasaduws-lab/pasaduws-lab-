@@ -1,0 +1,8 @@
+{
+  "name": "ระบบทะเบียนครุภัณฑ์ อบต.วังซ้าย",
+  "description": "ระบบทะเบียนครุภัณฑ์ องค์การบริหารส่วนตำบลวังซ้าย จัดการ บันทึก ตรวจสอบ และออกรายงานครุภัณฑ์",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global Safety Net default-deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Connection test document
+    match /test/{docId} {
+      allow read, write: if true;
+    }
+
+    // Assets registry collection
+    match /assets/{assetId} {
+      // Anyone can read and inspect the public municipal assets registry
+      allow read: if true;
+      // Allow modifying assets
+      allow write: if true;
+    }
+
+    // Property Control Ledger collection
+    match /property_control_ledger/{assetId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

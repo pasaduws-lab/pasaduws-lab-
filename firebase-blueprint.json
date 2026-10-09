@@ -1,0 +1,101 @@
+{
+  "entities": {
+    "AssetItem": {
+      "title": "AssetItem",
+      "description": "ครุภัณฑ์ประจำองค์การบริหารส่วนตำบลวังซ้าย",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "รหัสระบุรายการเอกสาร"
+        },
+        "seq": {
+          "type": "number",
+          "description": "ลำดับที่"
+        },
+        "code": {
+          "type": "string",
+          "description": "รหัสครุภัณฑ์"
+        },
+        "name": {
+          "type": "string",
+          "description": "รายการครุภัณฑ์"
+        },
+        "model": {
+          "type": "string",
+          "description": "รุ่นหรือยี่ห้อ"
+        },
+        "receivedDate": {
+          "type": "string",
+          "description": "วันเดือนปีที่ได้รับ"
+        },
+        "receivedYear": {
+          "type": "string",
+          "description": "ปีที่ได้รับ"
+        },
+        "location": {
+          "type": "string",
+          "description": "สถานที่ติดตั้งหรือแผนกครอบครอง"
+        },
+        "category": {
+          "type": "string",
+          "description": "ประเภทครุภัณฑ์"
+        },
+        "customCategory": {
+          "type": "string",
+          "description": "ประเภทครุภัณฑ์เพิ่มเติม"
+        },
+        "quantity": {
+          "type": "number",
+          "description": "จำนวนหน่วย"
+        },
+        "unit": {
+          "type": "string",
+          "description": "หน่วยนับ"
+        },
+        "price": {
+          "type": "number",
+          "description": "ราคาต่อหน่วย"
+        },
+        "status": {
+          "type": "string",
+          "description": "สถานะการใช้งาน"
+        },
+        "customStatus": {
+          "type": "string",
+          "description": "สถานะอื่นระบุ"
+        },
+        "remarks": {
+          "type": "string",
+          "description": "หมายเหตุ"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "ภาพประกอบ"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "วันเวลาที่แก้ไขล่าสุด"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "category",
+        "quantity",
+        "price",
+        "status"
+      ]
+    }
+  },
+  "firestore": {
+    "/property_control_ledger/{assetId}": {
+      "schema": "AssetItem",
+      "description": "ทะเบียนครุภัณฑ์ Property Control Ledger"
+    },
+    "/assets/{assetId}": {
+      "schema": "AssetItem",
+      "description": "รายการทะเบียนครุภัณฑ์ อบต.วังซ้าย ทั้งหมด"
+    }
+  }
+}
